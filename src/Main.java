@@ -14,9 +14,10 @@ public class Main {
         //Task 2.
         System.out.println("Задача 2. Выбор версии программы для смартфона");
         defineAppVersion(0, 2024);
-        defineAppVersion(1, 2013);
+        defineAppVersion(1, 2014);
         defineAppVersion(2, 2025);
         //Task 3.
+        System.out.println("");
         System.out.println("Задача 3. Расчёт времени доставки");
         System.out.println("Понадобиться дней доставки: " + deliveryCalculationDays(30));
         System.out.println("Понадобиться дней доставки: " + deliveryCalculationDays(80));
@@ -34,7 +35,7 @@ public class Main {
     }
 
     // Method for Task 2
-    public static void defineAppVersion(int nameOs, int mobileYear) {
+    public static void defineAppVersion(int nameOs, int clientDeviceYear) {
         String nameOsForYourMobile;
         switch (nameOs) {
             case 0:
@@ -48,10 +49,10 @@ public class Main {
                 break;
         }
         int currentYear = LocalDate.now().getYear();
-        if (mobileYear != currentYear) {
-            System.out.println("Установите для вашей ОС " + nameOsForYourMobile + " установите облегченную версию");
-        } else {
+        if (clientDeviceYear==currentYear || clientDeviceYear >= 2015 ) {
             System.out.println("Установите для вашей ОС " + nameOsForYourMobile + " установите нормальную версию");
+        } else {
+            System.out.println("Установите для вашей ОС " + nameOsForYourMobile + " установите облегченную версию");
 
 //        int OS = 0;
 //        int clientDeviceYear = 2012;
